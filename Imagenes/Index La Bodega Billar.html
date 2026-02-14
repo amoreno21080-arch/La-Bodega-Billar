@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Bodega Billar</title>
+  <style>
+    :root {
+      --negro: #000000;
+      --blanco: #ffffff;
+      --mostaza: #d4a017;
+      --gris: #1a1a1a;
+    }.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  padding: 10px 20px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--mostaza);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--blanco);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--mostaza);
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px 18px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 15px;
+  border: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--negro);
+  color: var(--blanco);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('imagenes/Pres.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  color: var(--mostaza);
+  letter-spacing: 2px;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: var(--mostaza);
+  color: var(--negro);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--blanco);
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  color: var(--mostaza);
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--gris);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  color: var(--mostaza);
+  margin-bottom: 15px;
+}
+
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 30px 20px;
+  color: #ccc;
+}
+
+footer span {
+  color: var(--mostaza);
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Imagenes/logo LBB.jpg" alt="Logo La Bodega Billar">
+        <span>La Bodega Billar</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#info">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>  <header>
+    <h1>La Bodega Billar</h1>
+    <p>Snacks, bebidas y billar en un ambiente auténtico, perfecto para relajarte, competir y pasarla bien.</p>
+    <a href="#servicios" class="btn">Conócenos</a>
+  </header>  <section id="servicios">
+    <h2>¿Qué ofrecemos?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🎱 Billar</h3>
+        <p>Excelentes mesas de billar en dondiciones optimas para entrenar o jugar un buen rato acompañado con amigos y familia.</p>
+      </div>
+      <div class="card">
+        <h3>🥤 Bebidas</h3>
+        <p>Cervezas, coolers, refrescos, miceladas y bebidas frías para acompañar cada jugada.</p>
+      </div>
+      <div class="card">
+        <h3>🍟 Snacks</h3>
+        <p>Botanas, papas, alitas, boneless y más para que no juegues con el estómago vacío.</p>
+      </div>
+    </div>
+  </section>  <section>
+    <h2>El ambiente</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      En <strong>La Bodega Billar</strong> combinamos un estilo urbano y elegante con un ambiente relajado, ideal para reuniones entre amigos, torneos y noches memorables.
+    </p>
+  </section>  <section id="info">
+    <h2>Información</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🕒 Horario</h3>
+        <p>
+          Lunes a Domingo: 9:00 AM – 11:00 PM<br>
+          Domingo: 4:00 PM – 11:00 PM
+        </p>
+      </div>
+      <div class="card">
+        <h3>📍 Dirección</h3>
+        <p>
+          Calle Playa Novilero #17<br>
+          Colonia Lomas de la Cruz<br>
+          Tepic, Nayarit
+        </p>
+      </div>
+      <div class="card">
+        <h3>📞 Contacto</h3>
+        <p>
+          Tel: 311 545 40 98<br>
+          WhatsApp: 55 9876 5432<br>
+          Facebook / Instagram: @labodegabillar
+        </p>
+      </div>
+    </div>
+  </section>  <section class="mapa">
+    <h2>¿Cómo llegar?</h2>
+    <iframe src="https://www.google.com/maps?q=La+Bodega+Billar+Tepic+Nayarit&output=embed
+" loading="lazy"></iframe>
+  </section>  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="grid">
+      <div class="card"><img src="Imagenes/Pres.jpg" alt="Billar 1" style="width:100%; border-radius:12px;"></div>
+      <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 2.03.39 PM.jpeg" alt="Billar 11" style="width:100%; border-radius:12px;"></div>
+      <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 12.47.42 PM.jpeg" alt="Billar 12" style="width:100%; border-radius:12px;"></div>
+      <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 12.44.51 PM.jpeg" alt="Billar 13" style="width:100%; border-radius:12px;"></div>
+      <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 1.41.13 PM.jpeg" alt="Billar 2" style="width:100%; border-radius:12px;"></div>
+      <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 12.44.51 PM (1).jpeg" alt="Billar 3" style="width:100%; border-radius:12px;"></div>
+      </div>
+
+    <p style="text-align:center; margin-top:20px;">s</p>
+  </section>  <footer>
+    <p>© 2026 <span>La Bodega Billar</span> · Todos los derechos reservados</p>
+  </footer><a href="https://wa.me/523115454098" class="whatsapp" target="_blank">💬</a>
+
+</body>
+</html>
