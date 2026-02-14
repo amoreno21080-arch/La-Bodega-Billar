@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Bodega Billar</title>
+
+  <style>
+    :root {
+      --negro: #000000;
+      --blanco: #ffffff;
+      --mostaza: #d4a017;
+      --gris: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--negro);
+      color: var(--blanco);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      padding: 10px 20px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--mostaza);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--blanco);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--mostaza);
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url('Imagenes/Pres.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      color: var(--mostaza);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      background-color: var(--mostaza);
+      color: var(--negro);
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: var(--blanco);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      color: var(--mostaza);
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: var(--gris);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      color: var(--mostaza);
+      margin-bottom: 15px;
+    }
+
+    /* MENÚ */
+    .menu-categoria {
+      margin-bottom: 50px;
+    }
+
+    .menu-categoria h3 {
+      color: var(--mostaza);
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+
+    .menu-lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item {
+      background-color: var(--gris);
+      padding: 20px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-item span {
+      font-weight: bold;
+      color: var(--mostaza);
+    }
+
+    /* NOVEDADES */
+    .novedades {
+      background-color: #111;
+      border-radius: 20px;
+    }
+
+    .novedad-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      align-items: center;
+    }
+
+    .novedad-card img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .novedad-info h3 {
+      color: var(--mostaza);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .novedad-info span {
+      color: var(--mostaza);
+      font-weight: bold;
+    }
+
+    /* MAPA */
+    .mapa iframe {
+      width: 100%;
+      height: 350px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 30px 20px;
+      color: #ccc;
+    }
+
+    footer span {
+      color: var(--mostaza);
+      font-weight: bold;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      z-index: 1000;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="Imagenes/logo LBB.jpg" alt="Logo">
+      <span>La Bodega Billar</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#novedades">Novedades</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#info">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <h1>La Bodega Billar</h1>
+  <p>Un establecimiento totalmente familiar para disfrutar y relajarte con amigos y familia🎱🍟🍿</p>
+  <a href="#menu" class="btn">Ver menú</a>
+</header>
+
+<section id="servicios">
+  <h2>¿Qué ofrecemos?</h2>
+  <div class="grid">
+    <div class="card"><h3>🎱 Billar</h3><p>Mesas profesionales.</p></div>
+    <div class="card"><h3>🥤 Bebidas</h3><p>Cervezas y micheladas.</p></div>
+    <div class="card"><h3>🍟 Snacks</h3><p>Boneless, alitas y botanas.</p></div>
+  </div>
+</section>
+
+<section id="menu">
+  <h2>Menú</h2>
+
+  <div class="menu-categoria">
+    <h3>🥤 Bebidas</h3>
+    <div class="menu-lista">
+      <div class="menu-item"><p>Cerveza Nacional</p><span>$45</span></div>
+      <div class="menu-item"><p>Cerveza Importada</p><span>$65</span></div>
+      <div class="menu-item"><p>Michelada</p><span>$70</span></div>
+      <div class="menu-item"><p>Refresco</p><span>$30</span></div>
+    </div>
+  </div>
+
+  <div class="menu-categoria">
+    <h3>🍟 Snacks</h3>
+    <div class="menu-lista">
+      <div class="menu-item"><p>Papas a la francesa</p><span>$55</span></div>
+      <div class="menu-item"><p>Nachos con queso</p><span>$60</span></div>
+      <div class="menu-item"><p>Boneless</p><span>$95</span></div>
+      <div class="menu-item"><p>Alitas</p><span>$100</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="novedades" class="novedades">
+  <h2>Novedades</h2>
+  <div class="novedad-card">
+    <img src="Imagenes/FB_IMG_1771091204792.jpg" alt="Torneo próximo">
+    <div class="novedad-info">
+      <h3>🎱🎱🎱 Torneo Próximo 🎱🎱🎱</h3>
+      <p><span>📅 Fecha:</span> Domingo 8 de marzo de 2026</p>
+      <p><span>🕒 Hora:</span> 12:00 PM,  Cierre de Inscripciones 11:50 AM (Sin Excepciones)</p>
+      <p><span>💵 Inscripción:</span> Segunda y Tercera Fuerza: $350, Principiantes y Amateur: $250</p>
+      <p><span>🏆 Premiación:</span> $5,000 pesos en Bolsa garantizada mas Inscripciones</p>
+      <p>¿Plan para el domingo? 🎱🍺 ¡Vente a La Bodega Billar!<br>
+        ¡ PREPÁRATE PARA COMPETIR ! 🎱🏆 ¿Tienes lo necesario para llevarte la gloria y el efectivo?<br>
+      Te invitamos a nuestro Torneo Abierto de Bola 9<br>
+      ¡Hay lugar para todos! Desde los más expertos hasta los que apenas van empezando.<br>
+      ¡Demuestra tu nivel y no te quedes fuera! 👊✨ 📲 Informes e inscripciones: 311 126 7332</p>
+      <a href="https://wa.me/3111267332" class="btn">Inscribirme🎱</a>
+    </div>
+  </div>
+</section>
+
+<section class="mapa">
+  <h2>¿Cómo llegar?</h2>
+  <iframe src="https://www.google.com/maps?q=La+Bodega+Billar+Tepic+Nayarit&output=embed" loading="lazy"></iframe>
+</section>
+
+<section id="galeria">
+  <h2>Galería</h2>
+  <div class="grid">
+    <div class="card"><img src="Imagenes/Pres.jpg" style="width:100%;border-radius:12px"></div>
+    <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 2.03.39 PM.jpeg" style="width:100%;border-radius:12px"></div>
+    <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 12.47.42 PM.jpeg" style="width:100%;border-radius:12px"></div>
+    <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 12.44.51 PM.jpeg" style="width:100%;border-radius:12px"></div>
+    <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 1.41.13 PM.jpeg" style="width:100%;border-radius:12px"></div>
+    <div class="card"><img src="Imagenes/WhatsApp Image 2026-02-07 at 12.44.51 PM (1).jpeg" style="width:100%;border-radius:12px"></div>
+  </div>
+</section>
+
+<section id="info">
+  <h2>Contacto</h2>
+  <div class="grid">
+    <div class="card"><h3>📍 Dirección</h3><p>Tepic, Nayarit</p></div>
+    <div class="card"><h3>📞 Teléfono</h3><p>311 545 40 98</p></div>
+    <div class="card"><h3>🕒 Horario</h3><p>9:00 AM – 11:00 PM</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>La Bodega Billar</span></p>
+</footer>
+
+<a href="https://wa.me/3111267332" class="whatsapp">💬</a>
+
+</body>
+</html>
